@@ -4,7 +4,7 @@ Sistema de monitoramento e registro colaborativo de ocorrências ambientais urba
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto é dividido em dois módulos principais:
 
@@ -13,7 +13,7 @@ O projeto é dividido em dois módulos principais:
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Método Rápido (Windows)
 Basta dar um duplo clique no arquivo:
