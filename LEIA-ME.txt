@@ -1,0 +1,82 @@
+=========================================================
+      ECOURBANO - GUIA RÁPIDO DE EXECUÇÃO LOCAL
+=========================================================
+
+MÉTODO MAIS FÁCIL → DUPLO CLIQUE EM:
+  📁 INICIAR_ECOURBANO.bat
+
+O script fará tudo automaticamente:
+  ✅ Verifica se o Node.js está instalado (e instala se necessário)
+  ✅ Instala as dependências do Backend e Mobile
+  ✅ Detecta seu IP na rede Wi-Fi automaticamente
+  ✅ Atualiza o IP no App.js
+  ✅ Abre o servidor Backend em uma janela separada
+  ✅ Inicia o Expo com o QR Code para o celular
+
+=========================================================
+CASO QUEIRA INICIAR MANUALMENTE (MÉTODO ALTERNATIVO):
+=========================================================
+
+Nesta pasta "EcoUrbano", você encontrará duas pastas:
+1. Backend (Servidor Node.js API e Conexão de Banco)
+2. Mobile (Aplicativo React Native do Usuário final)
+
+REQUISITO: Node.js instalado - https://nodejs.org/en/download/
+
+---------------------------------------------------------
+PASSO 1: INICIAR O BACKEND (SERVIDOR DISTRIBUÍDO)
+---------------------------------------------------------
+1. Abra um terminal e navegue até a pasta Backend:
+   cd "C:\Users\Saady\Downloads\APS's Ciencia da computacao\EcoUrbano\Backend"
+2. Instale as dependências executando:
+   npm install
+3. Inicie o servidor executando:
+   npm start
+
+(O servidor será executado em http://0.0.0.0:3000)
+(Fallback em memória RAM - funciona mesmo sem MongoDB instalado)
+
+---------------------------------------------------------
+PASSO 2: DESCOBRIR SEU IP LOCAL
+---------------------------------------------------------
+Abra o CMD e execute:
+   ipconfig
+Anote o "Endereço IPv4" (ex: 192.168.1.15)
+
+No arquivo Mobile\App.js, linha 16, atualize a constante:
+   const API_URL = 'http://SEU_IP_AQUI:3000/api/v1/ocorrencias';
+
+---------------------------------------------------------
+PASSO 3: INICIAR O FRONTEND (APLICATIVO MOBILE)
+---------------------------------------------------------
+1. Baixe o aplicativo "Expo Go" no seu celular pessoal
+   (Disponível na App Store ou Google Play).
+   Conecte seu celular na mesma rede Wi-Fi do computador.
+2. Abra um NOVO terminal e navegue até a pasta Mobile:
+   cd "C:\Users\Saady\Downloads\APS's Ciencia da computacao\EcoUrbano\Mobile"
+3. Instale as dependências do app executando:
+   npm install
+4. Inicie o Metro Bundler do Expo executando:
+   npm start
+5. Um QR Code aparecerá no terminal (ou no navegador).
+   - Se for iPhone: abra o aplicativo de Câmera do iOS.
+   - Se for Android: abra o Expo Go e clique em "Scan QR Code".
+
+---------------------------------------------------------
+PASSO 4: TESTANDO O APLICATIVO
+---------------------------------------------------------
+- Assim que o App abrir, ele solicitará permissão de GPS.
+- Clique no botão [+] verde flutuante.
+- Preencha o tipo de ocorrência ambiental.
+- Ao clicar em Enviar, o celular exigirá Digital ou Rosto
+  (TouchID / FaceID) conforme a dissertação da APS.
+- Se a biometria for aprovada, a requisição é enviada ao
+  servidor e a marcação aparece no mapa em tempo real.
+
+---------------------------------------------------------
+DIAGNÓSTICO / TESTE DO SERVIDOR
+---------------------------------------------------------
+Com o servidor rodando, acesse no navegador:
+  http://localhost:3000/health
+Deve aparecer: {"status":"ok","message":"EcoUrbano Online!"}
+=========================================================

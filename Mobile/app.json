@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "EcoUrbano",
+    "slug": "eco-urbano",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "O EcoUrbano precisa de Face ID para validar a autoria da denúncia ambiental.",
+        "NSLocationWhenInUseUsageDescription": "A localização é usada para identificar onde a ocorrência ambiental aconteceu."
+      }
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
+      ]
+    },
+    "web": {},
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}
